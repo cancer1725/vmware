@@ -4,42 +4,42 @@
   "newProjectRoot": "src",
   "projects": {
     "dev": {
-      "root": "src/dev",
+      "root": "src/",
       "projectType": "application",
-      "sourceRoot": "src/dev/src",
+      "sourceRoot": "src/website/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "src/dev/custom-webpack.config.js",
+              "path": "src/website/custom-webpack.config.js",
               "mergeStrategies": {
                 "externals": "replace"
               }
             },
-            "outputPath": "dist/dev",
-            "index": "src/dev/src/index.html",
-            "main": "src/dev/src/main.ts",
-            "polyfills": "src/dev/src/polyfills.ts",
-            "tsConfig": "src/dev/tsconfig.app.json",
+            "outputPath": "dist/website",
+            "index": "src/website/src/index.html",
+            "main": "src/website/src/main.ts",
+            "polyfills": "src/website/src/polyfills.ts",
+            "tsConfig": "src/website/tsconfig.app.json",
             "aot": true,
             "assets": [
               {
                 "glob": "favicon.ico",
-                "input": "src/dev/src",
+                "input": "src/website/src",
                 "output": "/"
               },
               {
                 "glob": "**/*",
-                "input": "src/dev/src/assets",
+                "input": "src/website/src/assets",
                 "output": "/assets"
               }
             ],
             "styles": [
               "src/clr-angular/main.scss",
               "packages/icons/src/clr-icons.scss",
-              "src/dev/src/styles.scss",
+              "src/website/src/styles.scss",
               "node_modules/@ng-select/ng-select/themes/default.theme.css"
             ],
             "scripts": [
@@ -49,12 +49,12 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "src/dev/tsconfig.prod.json",
+              "tsConfig": "src/website/tsconfig.prod.json",
               "styles": ["dist/clr-ui/clr-ui.min.css", "dist/clr-icons/clr-icons.min.css"],
               "fileReplacements": [
                 {
-                  "replace": "src/dev/src/environments/environment.ts",
-                  "with": "src/dev/src/environments/environment.prod.ts"
+                  "replace": "src/website/src/environments/environment.ts",
+                  "with": "src/website/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -70,12 +70,12 @@
               "styles": [
                 "src/clr-angular/dark-theme.scss",
                 "packages/icons/src/clr-icons.scss",
-                "src/dev/src/styles.scss"
+                "src/website/src/styles.scss"
               ],
               "fileReplacements": [
                 {
-                  "replace": "src/dev/src/environments/environment.ts",
-                  "with": "src/dev/src/environments/environment.dark.ts"
+                  "replace": "src/website/src/environments/environment.ts",
+                  "with": "src/website/src/environments/environment.dark.ts"
                 }
               ]
             }
@@ -85,7 +85,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "customWebpackConfig": {
-              "path": "src/dev/custom-webpack.config.js",
+              "path": "src/website/custom-webpack.config.js",
               "mergeStrategies": {
                 "externals": "replace"
               }
